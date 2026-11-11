@@ -1,0 +1,313 @@
+
+/* =================================
+   NAVIK CHAT — VAULT STYLES
+   File: vault.css
+================================= */
+
+.vault-page {
+    min-height: 100vh;
+    padding: 24px;
+    background:
+        radial-gradient(circle at top right, rgba(0, 210, 255, 0.09), transparent 35%),
+        #080d18;
+}
+
+.vault-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+.vault-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.vault-header h1 {
+    margin: 0;
+    color: #f1f7ff;
+    font-size: 26px;
+    font-weight: 750;
+}
+
+.vault-header p {
+    margin: 6px 0 0;
+    color: #91a4bd;
+    font-size: 13px;
+}
+
+/* Buttons */
+
+.vault-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 10px 16px;
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(0, 210, 255, 0.09);
+    color: #75e8ff;
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.vault-button:hover {
+    background: rgba(0, 210, 255, 0.17);
+    border-color: #00d2ff;
+}
+
+.vault-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Search */
+
+.vault-search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.vault-search input {
+    flex: 1;
+    min-width: 0;
+    height: 46px;
+    padding: 0 15px;
+    border: 1px solid #26364c;
+    border-radius: 10px;
+    outline: none;
+    background: #101a2a;
+    color: #f1f7ff;
+    font-size: 14px;
+}
+
+.vault-search input:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.1);
+}
+
+.vault-search input::placeholder {
+    color: #71839b;
+}
+
+/* Message count */
+
+.vault-count {
+    margin: 0 0 16px;
+    color: #91a4bd;
+    font-size: 13px;
+}
+
+/* Archived messages */
+
+.vault-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.vault-message {
+    padding: 17px;
+    border: 1px solid #26364c;
+    border-radius: 14px;
+    background: linear-gradient(
+        145deg,
+        rgba(20, 34, 54, 0.96),
+        rgba(12, 21, 36, 0.96)
+    );
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    overflow-wrap: anywhere;
+}
+
+.vault-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 11px;
+}
+
+.vault-sender {
+    color: #6ee7ff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.vault-date {
+    color: #7f91aa;
+    font-size: 11px;
+}
+
+.vault-message-body {
+    margin: 0;
+    color: #e7effb;
+    font-size: 14px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+}
+
+.vault-message-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 13px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    color: #71839b;
+    font-size: 11px;
+}
+
+/* Empty and error states */
+
+.vault-empty {
+    padding: 45px 20px;
+    border: 1px dashed #34445b;
+    border-radius: 14px;
+    color: #91a4bd;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.vault-empty strong {
+    display: block;
+    margin-bottom: 7px;
+    color: #e7effb;
+    font-size: 16px;
+}
+
+.vault-error {
+    margin: 12px 0;
+    color: #ff8585;
+    font-size: 13px;
+}
+
+/* Unlock page */
+
+.unlock-container {
+    width: 100%;
+    max-width: 420px;
+    margin: 10vh auto;
+    padding: 30px;
+    border: 1px solid #26364c;
+    border-radius: 18px;
+    background: #101a2a;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+}
+
+.unlock-icon {
+    margin-bottom: 15px;
+    color: #00d2ff;
+    font-size: 38px;
+    text-align: center;
+}
+
+.unlock-container h1 {
+    margin: 0 0 9px;
+    color: #f1f7ff;
+    font-size: 23px;
+    text-align: center;
+}
+
+.unlock-container p {
+    margin: 0 0 22px;
+    color: #91a4bd;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.unlock-container input {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 14px;
+    padding: 0 14px;
+    border: 1px solid #34445b;
+    border-radius: 10px;
+    outline: none;
+    background: #080d18;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.unlock-container input:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.1);
+}
+
+.unlock-container button {
+    width: 100%;
+    min-height: 46px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(100deg, #00a9d6, #0878ef);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.unlock-container button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.unlock-error {
+    min-height: 18px;
+    margin-top: 12px;
+    color: #ff8585;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    .vault-page {
+        padding: 16px;
+    }
+
+    .vault-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .vault-header h1 {
+        font-size: 22px;
+    }
+
+    .vault-search {
+        flex-direction: column;
+    }
+
+    .vault-search button {
+        width: 100%;
+    }
+
+    .vault-message {
+        padding: 14px;
+    }
+
+    .vault-message-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .unlock-container {
+        margin: 8vh 16px;
+        padding: 24px;
+    }
+}

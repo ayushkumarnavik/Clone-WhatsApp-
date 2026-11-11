@@ -1,0 +1,19 @@
+
+{
+  "name": "navik-chat-functions",
+  "description": "Backend for NAVIK Private Chat",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "@google-cloud/tasks": "^5.5.0",
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0"
+  }
+}

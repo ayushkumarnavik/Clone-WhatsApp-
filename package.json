@@ -1,0 +1,18 @@
+
+{
+  "name": "navik-private-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Private two-participant messaging website with an automatically archived message vault",
+  "scripts": {
+    "deploy": "firebase deploy",
+    "deploy:rules": "firebase deploy --only firestore:rules",
+    "deploy:functions": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "firebase": "10.14.1"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.0.0"
+  }
+}

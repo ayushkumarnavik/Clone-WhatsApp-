@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101827">
+
+    <title>Private Messenger | Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="settings-container">
+
+    <!-- HEADER -->
+
+    <header class="settings-header">
+
+        <div>
+            <h1>Settings</h1>
+
+            <p>
+                Manage your private messenger.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            onclick="location.href='chat.html'">
+
+            ← Back to Chat
+
+        </button>
+
+    </header>
+
+
+    <!-- ACCOUNT -->
+
+    <section class="settings-card">
+
+        <div class="settings-icon">
+            👤
+        </div>
+
+        <div class="settings-content">
+
+            <h2>Account Information</h2>
+
+            <p>
+                Your signed-in account details.
+            </p>
+
+            <div class="setting-item">
+
+                <span>Account Email</span>
+
+                <strong id="accountEmail">
+                    Loading...
+                </strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Account Status</span>
+
+                <strong id="accountStatus">
+                    Checking...
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHAT SETTINGS -->
+
+    <section class="settings-card">
+
+        <div class="settings-icon">
+            💬
+        </div>
+
+        <div class="settings-content">
+
+            <h2>Chat Settings</h2>
+
+            <p>
+                Information about your conversation.
+            </p>
+
+            <div class="setting-item">
+
+                <span>Participants</span>
+
+                <strong>2 Authorized Users</strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Message Archive Timer</span>
+
+                <strong>8 Seconds</strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Message Storage</span>
+
+                <strong>Private Vault</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VAULT SETTINGS -->
+
+    <section class="settings-card">
+
+        <div class="settings-icon">
+            🔐
+        </div>
+
+        <div class="settings-content">
+
+            <h2>Vault Settings</h2>
+
+            <p>
+                Your archived message storage.
+            </p>
+
+            <div class="setting-item">
+
+                <span>Vault Protection</span>
+
+                <strong>Enabled</strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Vault Access</span>
+
+                <strong>Authorized Users Only</strong>
+
+            </div>
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="location.href='vault.html'">
+
+                OPEN PRIVATE VAULT →
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRIVACY -->
+
+    <section class="settings-card">
+
+        <div class="settings-icon">
+            🛡️
+        </div>
+
+        <div class="settings-content">
+
+            <h2>Privacy & Security</h2>
+
+            <p>
+                Your conversations are restricted
+                to the two authorized Firebase accounts.
+            </p>
+
+            <div class="setting-item">
+
+                <span>Authentication</span>
+
+                <strong>Email & Password</strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Phone OTP</span>
+
+                <strong>Disabled</strong>
+
+            </div>
+
+            <div class="setting-item">
+
+                <span>Database Access</span>
+
+                <strong>Restricted</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LOGOUT -->
+
+    <section class="logout-section">
+
+        <h2>Sign Out</h2>
+
+        <p>
+            End your current session on this device.
+        </p>
+
+        <button
+            type="button"
+            id="settingsLogoutButton"
+            class="logout-button">
+
+            SIGN OUT
+
+        </button>
+
+    </section>
+
+
+    <footer class="settings-footer">
+
+        PRIVATE MESSENGER © 2026
+
+    </footer>
+
+</div>
+
+
+<script type="module" src="settings.js"></script>
+
+</body>
+
+</html>

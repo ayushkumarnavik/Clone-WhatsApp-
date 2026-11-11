@@ -1,0 +1,119 @@
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =================================
+    // AUTHORISED PARTICIPANTS
+    // =================================
+
+    function isParticipant() {
+      return request.auth != null
+        && request.auth.uid in [
+          "REPLACE_WITH_FIRST_USER_UID",
+          "REPLACE_WITH_SECOND_USER_UID"
+        ];
+    }
+
+    // =================================
+    // VAULT SESSION CHECK
+    // =================================
+
+    function hasValidVaultSession(roomId) {
+
+      let sessionPath =
+        /databases/$(database)/documents/rooms/$(roomId)/vaultSessions/$(request.auth.uid);
+
+      return isParticipant()
+        && exists(sessionPath)
+        && get(sessionPath).data.expiresAt > request.time;
+    }
+
+    // =================================
+    // PRIVATE CHAT ROOM
+    // =================================
+
+    match /rooms/{roomId} {
+
+      allow read: if isParticipant()
+        && roomId == "private-room-7739362847";
+
+      allow write: if false;
+
+      // =================================
+      // LIVE CHAT MESSAGES
+      // =================================
+
+      match /messages/{messageId} {
+
+        allow read: if isParticipant()
+          && roomId == "private-room-7739362847";
+
+        allow create: if isParticipant()
+          && roomId == "private-room-7739362847"
+          && request.resource.data.keys().hasOnly([
+            "text",
+            "senderId",
+            "senderEmail",
+            "createdAt",
+            "expiresAt"
+          ])
+          && request.resource.data.keys().hasAll([
+            "text",
+            "senderId",
+            "senderEmail",
+            "createdAt",
+            "expiresAt"
+          ])
+          && request.resource.data.senderId == request.auth.uid
+          && request.resource.data.senderEmail == request.auth.token.email
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 2000
+          && request.resource.data.createdAt == request.time;
+
+        // Clients cannot edit or delete messages.
+        // The backend uses Admin SDK for archiving.
+        allow update, delete: if false;
+
+      }
+
+      // =================================
+      // ARCHIVED MESSAGES
+      // =================================
+
+      match /archive/{messageId} {
+
+        allow read: if roomId == "private-room-7739362847"
+          && hasValidVaultSession(roomId);
+
+        // Only trusted backend code can write.
+        allow create, update, delete: if false;
+
+      }
+
+      // =================================
+      // VAULT SESSIONS
+      // =================================
+
+      match /vaultSessions/{userId} {
+
+        // No direct client access.
+        // Backend manages vault sessions.
+        allow read, write: if false;
+
+      }
+
+    }
+
+    // =================================
+    // DENY ALL OTHER DOCUMENT ACCESS
+    // =================================
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+  }
+}

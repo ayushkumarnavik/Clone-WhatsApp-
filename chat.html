@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101827">
+
+    <title>Private Messenger | Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <!-- HEADER -->
+
+    <header class="chat-header">
+
+        <div class="profile-section">
+
+            <div class="profile-avatar">
+                ✦
+            </div>
+
+            <div class="profile-info">
+
+                <h2 id="participantName">
+                    Private Conversation
+                </h2>
+
+                <span id="onlineStatus">
+                    Connecting...
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                onclick="location.href='vault.html'"
+                title="Private Vault">
+                <span>▣</span>
+            </button>
+
+            <button
+                type="button"
+                onclick="location.href='settings.html'"
+                title="Settings">
+                ⚙
+            </button>
+
+            <button
+                type="button"
+                id="logoutButton"
+                title="Logout">
+                ↪
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CHAT INFORMATION -->
+
+    <div class="chat-information">
+
+        <span>🔒 PRIVATE CHAT</span>
+
+        <span id="connectionStatus">
+            Secure connection
+        </span>
+
+    </div>
+
+
+    <!-- MESSAGE AREA -->
+
+    <main id="messagesContainer"
+          class="messages-container">
+
+        <div id="emptyMessage"
+             class="empty-message">
+
+            <div class="empty-icon">
+                ✦
+            </div>
+
+            <h3>Your conversation starts here.</h3>
+
+            <p>
+                Send a message to begin chatting.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- MESSAGE COMPOSER -->
+
+    <form id="messageForm"
+          class="message-composer">
+
+        <textarea
+            id="messageInput"
+            placeholder="Type your message..."
+            maxlength="4000"
+            rows="1"
+            required>
+        </textarea>
+
+        <button
+            type="submit"
+            id="sendButton"
+            aria-label="Send message">
+
+            ➤
+
+        </button>
+
+    </form>
+
+
+    <!-- FOOTER -->
+
+    <footer class="chat-footer">
+
+        <span>
+            Messages automatically move to your Private Vault
+            after 8 seconds.
+        </span>
+
+    </footer>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script type="module" src="chat.js"></script>
+
+</body>
+
+</html>

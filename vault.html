@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101827">
+
+    <title>Private Messenger | Message Vault</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vault.css">
+</head>
+
+<body>
+
+<div class="vault-container">
+
+    <!-- HEADER -->
+
+    <header class="vault-header">
+
+        <div class="vault-brand">
+
+            <div class="vault-logo">
+                🔐
+            </div>
+
+            <div>
+                <h1>PRIVATE VAULT</h1>
+
+                <p>
+                    Your archived conversations
+                </p>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            onclick="location.href='chat.html'">
+
+            ← Back to Chat
+
+        </button>
+
+    </header>
+
+
+    <!-- VAULT INFORMATION -->
+
+    <section class="vault-information">
+
+        <div class="vault-icon">
+            🗄️
+        </div>
+
+        <h2>Your Message Archive</h2>
+
+        <p>
+            Messages transferred from the chat are
+            preserved here for authorized participants.
+        </p>
+
+        <div class="vault-security">
+
+            <span>🔒 Password Protected</span>
+
+            <span>Private Storage</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="vault-search">
+
+        <input
+            type="search"
+            id="vaultSearch"
+            placeholder="Search archived messages...">
+
+        <button type="button"
+                id="searchButton">
+
+            Search
+
+        </button>
+
+    </section>
+
+
+    <!-- MESSAGE COUNT -->
+
+    <div class="archive-heading">
+
+        <h3>Archived Messages</h3>
+
+        <span id="messageCount">
+            0 Messages
+        </span>
+
+    </div>
+
+
+    <!-- ARCHIVED MESSAGES -->
+
+    <main id="vaultMessages"
+          class="vault-messages">
+
+        <div id="vaultEmpty"
+             class="vault-empty">
+
+            <div>📭</div>
+
+            <h3>No archived messages yet</h3>
+
+            <p>
+                Your archived messages will appear here.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="vault-footer">
+
+        <p>
+            PRIVATE MESSENGER © 2026
+        </p>
+
+        <p>
+            Your conversations belong to your
+            authorized private chat.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script type="module" src="vault.js"></script>
+
+</body>
+
+</html>

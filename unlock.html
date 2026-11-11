@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#101827">
+
+    <title>Private Messenger | Unlock Vault</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="vault.css">
+
+</head>
+
+<body>
+
+<div class="unlock-container">
+
+    <div class="unlock-card">
+
+        <!-- LOCK ICON -->
+
+        <div class="unlock-icon">
+            🔐
+        </div>
+
+
+        <!-- TITLE -->
+
+        <p class="unlock-label">
+            RESTRICTED ACCESS
+        </p>
+
+        <h1>Private Vault</h1>
+
+        <p class="unlock-description">
+            Enter your vault password to access
+            your archived conversations.
+        </p>
+
+
+        <!-- PASSWORD FORM -->
+
+        <form id="vaultUnlockForm">
+
+            <label for="vaultPassword">
+                Vault Password
+            </label>
+
+            <input
+                type="password"
+                id="vaultPassword"
+                placeholder="Enter 4-digit password"
+                inputmode="numeric"
+                maxlength="4"
+                autocomplete="off"
+                required
+            >
+
+            <button
+                type="submit"
+                id="unlockButton">
+
+                UNLOCK VAULT →
+
+            </button>
+
+            <p
+                id="unlockError"
+                class="error"
+                role="alert">
+            </p>
+
+        </form>
+
+
+        <!-- SECURITY MESSAGE -->
+
+        <div class="unlock-security">
+
+            <span>🛡️</span>
+
+            <p>
+                Access is restricted to the two
+                authorized participants.
+            </p>
+
+        </div>
+
+
+        <!-- BACK BUTTON -->
+
+        <button
+            type="button"
+            class="back-button"
+            onclick="location.href='chat.html'">
+
+            ← Return to Chat
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script type="module" src="vault.js"></script>
+
+</body>
+
+</html>
